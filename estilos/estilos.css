@@ -1,0 +1,119 @@
+body {
+    background: #ddd;
+}
+
+.container-table{
+width: 90%;
+background: white;
+margin: 50px auto;
+box-shadow: 0 0 20px #333;
+
+display: grid;
+grid-template-columns: repeat(4, 25%);
+grid-auto-rows: 50px;
+}
+
+.table__title{
+    grid-column-start: 1;
+    grid-column-end: 5;
+
+    background: rgb(56,105,214);
+    color: White;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.9em;
+}
+
+.table__header, .table__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table__header {
+    font-weight: bold;
+    font-size: 1.5em;
+
+}
+
+.table__item {
+    padding: 10px;
+    font-size: 1.2;
+}
+
+/*editar*/
+
+.title_edit {
+    position: absolute;
+    right: 7%;
+    color: white;
+    text-decoration: none;
+}
+
+.title_edit:hover {
+    text-decoration: underline;
+}
+
+.container-table--edit {
+    grid-template-columns: repeat(5, 1fr);
+
+    width: 95%;
+    min-width: 300px;
+    grid-auto-rows: 70px;
+
+}
+
+.table__title--edit{
+    grid-column-start: 1;
+    grid-column-end: 6;
+}
+
+.table__input {
+    display: block;
+    padding-left: 10px;
+}
+
+.container__submit{
+    
+    background: #20bf20;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100px;
+    font-size: 1.1em;
+    margin: 15px auto;
+    cursor: pointer;
+
+}
+
+.table__item__link1 {
+    text-decoration: none;
+    text-align: center;
+    background: royalblue;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 80px;
+    font-size: 1.1em;
+    margin: 15px auto;
+    cursor: pointer;
+}
+
+.table__item__link {
+    text-decoration: none;
+    text-align: center;
+    border-radius: 0.25rem;
+    background: red;
+    color: white;
+    height: 3px;
+    border: none;
+    padding: 10px;
+    width: 50px;
+    
+    font-size: 1em;
+    margin: 15px auto;
+    cursor: pointer;
+}
+
