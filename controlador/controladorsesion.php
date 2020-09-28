@@ -39,7 +39,18 @@ if(isset($_POST['usuario']) && isset($_POST['clave'])){
         }
     }else{
         // no existe el usuario
-        echo "Nombre de usuario o contraseña incorrecto";
+        
+require '../vista/index.html';
+echo('<script>
+Swal.fire({
+  position: "top-center",
+  icon: "error",
+  title: "¡Usuario o contraseña incorrecta!",
+  showConfirmButton: false,
+  timer: 2500
+});
+</script>');
+
     }
     
 
