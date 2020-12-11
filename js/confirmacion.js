@@ -1,8 +1,8 @@
-function confirmacion(event) {
+function confirmacion(e) {
     if (confirm("¿esta seguro que desea eliminar este registro?")) {
         return true;
     } else { 
-        event.preventDefault();
+        e.preventDefault();
     }
 }
 

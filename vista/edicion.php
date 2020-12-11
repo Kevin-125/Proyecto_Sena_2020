@@ -9,14 +9,26 @@ $usuarios = "SELECT * FROM recibos"
 	<title>Recibos</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link rel="stylesheet" href="../css/main.css">
 	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../estilos/estilos.css">
-	    <!-- BOOTSTRAP -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
 
+	    <!-- BOOTSTRAP -->
+
+	
 	<style>
+	
+	.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #000;
+}
 
 div.dataTables_wrapper div.dataTables_filter label {
     font-weight: normal;
@@ -62,12 +74,30 @@ label {
 	}
 
 </style>
-	
+
 </head>
+
+<script type="text/javascript">
+
+function confirmar()
+{
+	var respuesta = confirm("¿Seguro que deseas eliminarlo?");
+
+	if (respuesta == true)
+	{
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
+</script>
 
 <body>
 
 <font size=3>
+
 <DIV ALIGN=left>
 	<!-- SideBar -->
 	<section class="full-box cover dashboard-sideBar">
@@ -84,13 +114,9 @@ label {
 					<figcaption class="text-center text-titles">User Name</figcaption>
 				</figure>
 				<ul class="full-box list-unstyled text-center">
+					
 					<li>
-						<a href="my-data.html" title="Mis datos">
-							<i class="zmdi zmdi-account-circle"></i>
-						</a>
-					</li>
-					<li>
-						<a href="my-account.html" title="Mi cuenta">
+						<a href="configuracion.php" title="Mi cuenta">
 							<i class="zmdi zmdi-settings"></i>
 						</a>
 					</li>
@@ -117,13 +143,16 @@ label {
 							<a href="../vista/modulorecibo.php"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Recibos</a>
 						</li>
 						<li>
-							<a href="category.html"><i class="zmdi zmdi-labels zmdi-hc-fw"></i> Cotizacion</a>
+							<a href="../vista/modulo_cotizaciones.php"><i class="zmdi zmdi-labels zmdi-hc-fw"></i> Cotizacion</a>
 						</li>
 						<li>
-							<a href="provider.html"><i class="zmdi zmdi-truck zmdi-hc-fw"></i> Productos</a>
+							<a href="../vista/modulo_cotizaciones.php"><i class="zmdi zmdi-truck zmdi-hc-fw"></i> Productos</a>
 						</li>
 						<li>
-							<a href="book.html"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Reportes</a>
+							<a href="../vista/moduloreportes.php"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Reportes</a>
+						</li>
+						<li>
+							<a href="../vista/backup.php"><i class="zmdi zmdi-cloud-download"></i> Backup</a>
 						</li>
 					</ul>
 				</li>
@@ -132,11 +161,9 @@ label {
 						<i class="zmdi zmdi-account-add zmdi-hc-fw"></i> Usuarios <i class="zmdi zmdi-caret-down pull-right"></i>
 					</a>
 					<ul class="list-unstyled full-box">
+						
 						<li>
-							<a href="admin.html"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Administradores</a>
-						</li>
-						<li>
-							<a href="client.html"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i> Clientes</a>
+							<a href="cliente.html"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i> Usuarios</a>
 						</li>
 					</ul>
 				</li>
@@ -158,11 +185,11 @@ label {
 					</a>
 				</li>
 			</ul>
-		</nav>
-		
-		<!-- Content page -->
+		</nav>	
 
-		<script src="../js/jquery-3.1.1.min.js"></script>
+		<!-- Content page -->
+	
+	<script src="../js/jquery-3.1.1.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 	<script src="../js/material.min.js"></script>
 	<script src="../js/ripples.min.js"></script>
@@ -196,10 +223,9 @@ label {
 				<td><?php echo $row["cantidad_debida"];?></td>
 				<td>
         <a href="../vista/actualizar.php? id=<?php echo $row["id_recibo"];?>" class="btn btn-primary">Editar</a> |
-		<a href="../modelo/procesareliminar.php? id=<?php echo $row["id_recibo"];?>" class="btn btn-danger"  >Eliminar</a>
+		<a href="../modelo/procesareliminar.php? id=<?php echo $row["id_recibo"];?>" class="btn btn-danger" onclick="return confirmar()">Eliminar</a>
 		<?php } mysqli_free_result($resultado);?>
 
-<script src="../js/confirmacion.js"></script>
 		</td>	
             </tr>
 
@@ -246,10 +272,7 @@ label {
         });
     </script>
 
-   
-
     </section>
-
 
 </body>
 </html>

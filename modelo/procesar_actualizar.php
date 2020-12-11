@@ -6,8 +6,7 @@ $nombrecliente = $_POST['nombrecliente'];
 $producto = $_POST['producto'];
 $cantidaddebida = $_POST['cantidaddebida'];
 
-$actualizar = "UPDATE recibos SET nombre_cliente='$nombrecliente',
- producto='$producto', cantidad_debida='$cantidaddebida' WHERE id_recibo='$id'";
+$actualizar = "UPDATE recibos SET nombre_cliente='$nombrecliente', producto='$producto', cantidad_debida='$cantidaddebida' WHERE id_recibo='$id'";
 
  $resultado=mysqli_query($conex, $actualizar);
 
@@ -18,3 +17,4 @@ $actualizar = "UPDATE recibos SET nombre_cliente='$nombrecliente',
          echo "<script>alert ('no se actualizo'); window.history.go(-1);</script>";
      }
  
+?>

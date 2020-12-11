@@ -1,5 +1,10 @@
 <?php
 
+header ("Expires: Fri, 14 Mar 1980 20:53:00 GMT"); //la pagina expira en fecha pasada 
+header ("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT"); //ultima actualizacion ahora cuando la cargamos 
+header ("Cache-Control: no-cache, must-revalidate"); //no guardar en CACHE 
+header ("Pragma: no-cache"); //PARANOIA, NO GUARDAR EN CACHE 
+
 if(strlen($_POST['desde'])>0 and strlen($_POST['hasta'])>0){
 	$desde = $_POST['desde'];
 	$hasta = $_POST['hasta'];
@@ -25,7 +30,7 @@ require_once('../tcpdf/tcpdf.php');
 	$pdf = new TCPDF('P', 'mm', 'A4', true, 'UTF-8', false);
 
 	$pdf->SetCreator(PDF_CREATOR);
-	$pdf->SetAuthor('Miguel Caro');
+	$pdf->SetAuthor('');
 	$pdf->SetTitle($_POST['reporte_name']);
 
 	$pdf->setPrintHeader(false); 
@@ -49,7 +54,7 @@ $content = '';
 			
 				<h1 style="text-align:center;">Reporte: Datos de Recibos</h1>
             	<h3 style="text-align:center;">Desde '.$verDesde.' hasta: '.$verHasta.'</h3>
-				<h1 style="text-align:left;">Total: $ '.$total2.'</h1>
+				<h1 style="text-align:left;">Total: $ 'echo "hola" .$total2.'</h1>
 
       <table border="1" cellpadding="5">
         <thead>
@@ -91,5 +96,5 @@ $pdf->writeHTML($content, true, 0, true, 0);
 
 $pdf->lastPage();
 
-$pdf->output('../temp/reporte.pdf', 'F');
+$pdf->output('../temp/reporte.pdf', 'I');
 ?>

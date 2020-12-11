@@ -1,4 +1,6 @@
+
 <?php
+
 error_reporting(E_ALL ^ E_NOTICE);
 require_once '../controlador/modelo_reporte_pdf.php';
 $impr = new adminDAO();
@@ -24,6 +26,7 @@ $datos = $impr->allBitacora();
 	<tr class="odd"><td valign="top" colspan="8" class="dataTables_empty">No hay datos disponibles en la tabla</td></tr>
 <?php
 	}
-			
+
+		
 ?>
 

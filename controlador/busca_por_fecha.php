@@ -7,7 +7,7 @@ $impr = new adminDAO();
 
 //EJECUTAMOS LA CONSULTA DE BUSQUEDA
 if($_POST['desde']==false || $_POST['hasta']==false){
-	include('../controlado/imprimir_datos.php');
+	include('../controlador/imprimir_datos.php');
 }else{
 	$desde = $_POST['desde'];
 	$hasta = $_POST['hasta'];
@@ -20,6 +20,7 @@ if($_POST['desde']==false || $_POST['hasta']==false){
 	
 
 ?>
+
 <?php 
 	if(count($datos)>0){ 
 	for($x=0; $x<count($datos); $x++){

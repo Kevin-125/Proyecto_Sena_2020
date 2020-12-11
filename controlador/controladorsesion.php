@@ -20,12 +20,14 @@ if(isset($_POST['usuario']) && isset($_POST['clave'])){
 
     $row = $query->fetch(PDO::FETCH_NUM);
     
-    
+
 
     if($row == true){
+
         $rol = $row[3];
         
         $_SESSION['rol'] = $rol;
+
         switch($rol){
             case 1:
                 header('location: ../vista/homeadmin.php');
@@ -33,6 +35,7 @@ if(isset($_POST['usuario']) && isset($_POST['clave'])){
 
             case 2:
             header('location: ../vista/homeauxiliar.php');
+
             break;
 
             default:
@@ -55,6 +58,15 @@ Swal.fire({
     
 
 }
+
+$id = $row[0];
+$pass = $row[2];
+$correo = $row[4];   
+
+
+$_SESSION['id'] = $id;
+$_SESSION['pass'] = $pass;
+$_SESSION['correo'] = $correo;
 
 //iniciar sesion en todos los archivos para imprimir nombre 
 

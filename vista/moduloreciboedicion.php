@@ -63,13 +63,9 @@ $usuarios = "SELECT * FROM recibos"
 					<figcaption class="text-center text-titles"><?php echo $_SESSION['']; ?></figcaption>
 				</figure>
 				<ul class="full-box list-unstyled text-center">
+					
 					<li>
-						<a href="my-data.html" title="Mis datos">
-							<i class="zmdi zmdi-account-circle"></i>
-						</a>
-					</li>
-					<li>
-						<a href="my-account.html" title="Mi cuenta">
+						<a href="configuracion.php" title="Mi cuenta">
 							<i class="zmdi zmdi-settings"></i>
 						</a>
 					</li>
@@ -93,16 +89,19 @@ $usuarios = "SELECT * FROM recibos"
 					</a>
 					<ul class="list-unstyled full-box">
 						<li>
-							<a href="modulorecibo.php"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Recibos</a>
+							<a href="../vista/modulorecibo.php"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Recibos</a>
 						</li>
 						<li>
-							<a href="category.html"><i class="zmdi zmdi-labels zmdi-hc-fw"></i> Cotizacion</a>
+							<a href="../vista/modulo_cotizaciones.php"><i class="zmdi zmdi-labels zmdi-hc-fw"></i> Cotizacion</a>
 						</li>
 						<li>
-							<a href="provider.html"><i class="zmdi zmdi-truck zmdi-hc-fw"></i> Productos</a>
+							<a href="../vista/modulo_cotizaciones.php"><i class="zmdi zmdi-truck zmdi-hc-fw"></i> Productos</a>
 						</li>
 						<li>
-							<a href="book.html"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Reportes</a>
+							<a href="../vista/moduloreportes.php"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Reportes</a>
+						</li>
+						<li>
+							<a href="../vista/backup.php"><i class="zmdi zmdi-cloud-download"></i> Backup</a>
 						</li>
 					</ul>
 				</li>
@@ -111,11 +110,9 @@ $usuarios = "SELECT * FROM recibos"
 						<i class="zmdi zmdi-account-add zmdi-hc-fw"></i> Usuarios <i class="zmdi zmdi-caret-down pull-right"></i>
 					</a>
 					<ul class="list-unstyled full-box">
+						
 						<li>
-							<a href="admin.html"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Administradores</a>
-						</li>
-						<li>
-							<a href="client.html"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i> Clientes</a>
+							<a href="cliente.php"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i> Usuarios</a>
 						</li>
 					</ul>
 				</li>

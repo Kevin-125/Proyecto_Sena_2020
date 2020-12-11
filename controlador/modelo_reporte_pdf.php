@@ -58,6 +58,6 @@ $total2 = $fila['total'];
 			
 	}
 	
-
+	
 
 ?>
